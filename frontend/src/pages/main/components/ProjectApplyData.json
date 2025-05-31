@@ -1,0 +1,31 @@
+{
+    "projects": [
+        {
+            "id": 1,
+            "name": "AI Chat Assistant",
+            "author": "Sarah Chen",
+            "description": "An intelligent chatbot using OpenAI's GPT-3",
+            "tech": "Python, TensorFlow",
+            "stars": 128,
+            "category": "AI/ML"
+        },
+        {
+            "id": 2,
+            "name": "E-commerce Platform",
+            "author": "Mike Johnson",
+            "description": "Full-stack e-commerce solution with real-time analytics",
+            "tech": "Next.js, MongoDB",
+            "stars": 89,
+            "category": "Web Development"
+        },
+        {
+            "id": 3,
+            "name": "Crypto Tracker",
+            "author": "Alex Turner",
+            "description": "Real-time cryptocurrency price tracking and analysis",
+            "tech": "React, Node.js",
+            "stars": 67,
+            "category": "Finance"
+        }
+    ]
+}
