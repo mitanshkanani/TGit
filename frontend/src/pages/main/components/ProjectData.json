@@ -1,0 +1,100 @@
+{
+    "projects": [
+        {
+            "id": 1,
+            "name": "Project Alpha",
+            "description": "A modern web application",
+            "tech": "React, Node.js",
+            "stars": 45,
+            "status": "ongoing",
+            "deadline": "2024-03-15",
+            "progress": 65,
+            "techStack": [
+                "React",
+                "Node.js",
+                "MongoDB"
+            ],
+            "requiredSkills": [
+                "JavaScript",
+                "React",
+                "Node.js"
+            ],
+            "vacancies": [
+                {
+                    "role": "Frontend Developer",
+                    "count": 2,
+                    "skills": [
+                        "React",
+                        "CSS",
+                        "TypeScript"
+                    ]
+                },
+                {
+                    "role": "Backend Developer",
+                    "count": 1,
+                    "skills": [
+                        "Node.js",
+                        "MongoDB"
+                    ]
+                }
+            ],
+            "privacy": "public"
+        },
+        {
+            "id": 2,
+            "name": "Beta App",
+            "description": "Mobile first design system",
+            "tech": "React Native",
+            "stars": 32,
+            "status": "completed",
+            "deadline": "2024-02-01",
+            "progress": 100,
+            "techStack": [
+                "React Native",
+                "Node.js",
+                "Firebase"
+            ],
+            "requiredSkills": [
+                "JavaScript",
+                "React Native"
+            ],
+            "vacancies": [],
+            "privacy": "private"
+        },
+        {
+            "id": 3,
+            "name": "GameHub",
+            "description": "Gaming community platform",
+            "tech": "Next.js, MongoDB",
+            "stars": 28,
+            "status": "ongoing",
+            "deadline": "2024-04-30",
+            "progress": 25,
+            "techStack": [
+                "Next.js",
+                "MongoDB",
+                "Express",
+                "Node.js"
+            ],
+            "requiredSkills": [
+                "JavaScript",
+                "React",
+                "Node.js",
+                "MongoDB"
+            ],
+            "vacancies": [
+                {
+                    "role": "Full Stack Developer",
+                    "count": 3,
+                    "skills": [
+                        "JavaScript",
+                        "React",
+                        "Node.js",
+                        "MongoDB"
+                    ]
+                }
+            ],
+            "privacy": "public"
+        }
+    ]
+}
