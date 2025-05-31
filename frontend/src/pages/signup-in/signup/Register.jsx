@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/select";
 import { Calendar } from "@/components/ui/calendar";
 import { format } from "date-fns";
-import * as countryData from "country-flag-icons/unicode";
+import { countries, skillOptions } from "@/constants";
 import { Link, useNavigate } from "react-router-dom";
 import { Loader2 } from "lucide-react";
 import { motion } from "framer-motion";
@@ -22,50 +22,6 @@ import {
 import { cn } from "@/lib/utils";
 import { CalendarIcon, Sun, Moon } from "lucide-react";
 import { Particles } from "@/components/magicui/particles";
-
-const skillOptions = [
-  "C",
-  "C++",
-  "Java",
-  "Python",
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Angular",
-  "Vue.js",
-  "Node.js",
-  "Express.js",
-  "MongoDB",
-  "PostgreSQL",
-  "AWS",
-  "Docker",
-  "Kubernetes",
-  "DevOps",
-  "Machine Learning",
-  "Data Science",
-  "Blockchain",
-  "Frontend Development",
-  "Backend Development",
-  "Full Stack Development",
-];
-
-const countries = [
-  { code: "US", name: "United States" },
-  { code: "GB", name: "United Kingdom" },
-  { code: "IN", name: "India" },
-  { code: "CA", name: "Canada" },
-  { code: "AU", name: "Australia" },
-  { code: "DE", name: "Germany" },
-  { code: "FR", name: "France" },
-  { code: "JP", name: "Japan" },
-  { code: "CN", name: "China" },
-  { code: "BR", name: "Brazil" },
-  { code: "RU", name: "Russia" },
-  { code: "IT", name: "Italy" },
-  { code: "ES", name: "Spain" },
-  { code: "KR", name: "South Korea" },
-  { code: "NL", name: "Netherlands" },
-];
 
 const Register = () => {
   const navigate = useNavigate();
