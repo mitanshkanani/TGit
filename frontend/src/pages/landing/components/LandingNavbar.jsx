@@ -53,7 +53,7 @@ const LandingNavbar = () => {
               className="bg-primary text-primary-foreground hover:bg-primary/90"
               asChild
             >
-              <a href="/signup">Sign Up</a>
+              <a href="/register">Sign Up</a>
             </Button>
           </div>
 
