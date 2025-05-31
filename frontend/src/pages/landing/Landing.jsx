@@ -3,9 +3,12 @@ import { motion } from "framer-motion";
 import LandingNavbar from "./components/LandingNavbar";
 import { Button } from "@/components/ui/button";
 import Carousel from "./pages/Carousel";
+import Features from "./pages/Features";
+import Footer from "./components/Footer";
+
 const Landing = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+    <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20">
       <LandingNavbar />
       <main className="pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -18,14 +21,14 @@ const Landing = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <motion.h1
-                className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight"
+                className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight"
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
               >
                 Transform Your Git Experience
                 <motion.span
-                  className="text-blue-600"
+                  className="text-primary"
                   animate={{
                     scale: [1, 1.2, 1],
                     rotate: [0, 10, 0],
@@ -42,7 +45,7 @@ const Landing = () => {
               </motion.h1>
 
               <motion.p
-                className="mt-6 text-lg sm:text-xl text-gray-600 leading-relaxed"
+                className="mt-6 text-lg sm:text-xl text-muted-foreground leading-relaxed"
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
@@ -58,10 +61,14 @@ const Landing = () => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.5 }}
               >
-                <Button size="lg" className="text-lg px-8">
+                <Button size="lg" className="text-lg px-8 bg-primary text-primary-foreground hover:bg-primary/90">
                   Get Started
                 </Button>
-                <Button size="lg" variant="outline" className="text-lg px-8">
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="text-lg px-8 text-foreground border-border hover:bg-accent hover:text-accent-foreground"
+                >
                   Learn More
                 </Button>
               </motion.div>
@@ -79,22 +86,38 @@ const Landing = () => {
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.2 }}
               >
-                <div className="w-full h-[400px] bg-gradient-to-tr from-blue-100 to-purple-100 rounded-lg flex items-center justify-center">
-                  <span className="text-gray-400">Hero Image Placeholder</span>
+                <div className="w-full h-[400px] bg-gradient-to-tr from-primary/10 to-primary/5 dark:from-primary/20 dark:to-secondary/20 rounded-lg flex items-center justify-center">
+                  <span className="text-muted-foreground">Hero Image Placeholder</span>
                 </div>
               </motion.div>
             </motion.div>
           </div>
         </div>
       </main>
-      <section className="bg-white py-16">
+      <section className="bg-secondary/50 dark:bg-secondary/20 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">
-            Features
-          </h2>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-4xl font-bold text-foreground text-center mb-4">
+              Powerful Features
+            </h2>
+            <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-12">
+              Everything you need to manage your Git workflow efficiently
+            </p>
+          </motion.div>
+          
           <Carousel />
+          
+          <div className="mt-24">
+            <Features />
+          </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };
