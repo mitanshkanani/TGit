@@ -2,6 +2,7 @@ import React, { useState, useMemo } from "react";
 import ProjectApplyCard from "../../components/ProjectApplyCard";
 import projectData from "../../components/ProjectApplyData.json";
 import { Toaster } from "sonner";
+import Friends from "./Friends";
 
 const Start = () => {
   const [selectedCategory, setSelectedCategory] = useState("All Categories");
@@ -85,6 +86,7 @@ const Start = () => {
           </div>
         )}
       </div>
+      <Friends />
     </div>
   );
 };

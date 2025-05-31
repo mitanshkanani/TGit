@@ -3,6 +3,7 @@ import Project from './pages/project/Project'
 import Profile from './pages/profile/Profile'
 import Start from './pages/start/Start'
 import Navbar from './components/Navbar'
+import Details from './pages/detail/Details'
 import { Routes,Route } from 'react-router-dom'
 const Main = () => {
   return (
@@ -13,6 +14,7 @@ const Main = () => {
           <Route path="/" element={<Start />} />
           <Route path="/project" element={<Project />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/detail/:id" element={<Details />} />
         </Routes>
       </div>
         
