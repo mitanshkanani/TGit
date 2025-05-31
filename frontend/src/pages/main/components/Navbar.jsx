@@ -3,10 +3,11 @@ import React, { useState } from "react";
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isNotificationOpen, setIsNotificationOpen] = useState(false);
-  // Example notifications - replace with actual data from your backend
+  // Updated notifications state to handle friend requests
   const [notifications, setNotifications] = useState([
-    { id: 1, type: 'application', message: 'John Doe applied to your project "Project X"', isNew: true, seen: false },
-    { id: 2, type: 'accepted', message: 'You were accepted to project "Project Y"', isNew: true, seen: false }
+    { id: 1, type: 'friend_request', message: 'John Doe sent you a friend request', isNew: true, seen: false },
+    { id: 2, type: 'friend_accepted', message: 'Jane Smith accepted your friend request', isNew: true, seen: false },
+    { id: 3, type: 'application', message: 'John Doe applied to your project "Project X"', isNew: true, seen: false }
   ]);
 
   const markAsSeen = () => {
@@ -26,6 +27,14 @@ const Navbar = () => {
     if (!isNotificationOpen) {
       markAsSeen();
     }
+  };
+
+  const handleNotificationAction = (notificationId, action) => {
+    if (action === 'accept') {
+      // TODO: Replace with actual API call to accept friend request
+      alert('Friend request accepted!');
+    }
+    setNotifications(notifications.filter(n => n.id !== notificationId));
   };
 
   return (
@@ -117,6 +126,22 @@ const Navbar = () => {
                         className={`px-4 py-3 hover:bg-gray-50 ${notification.isNew ? 'bg-blue-50' : ''}`}
                       >
                         <p className="text-sm text-black">{notification.message}</p>
+                        {notification.type === 'friend_request' && (
+                          <div className="mt-2 space-x-2">
+                            <button
+                              onClick={() => handleNotificationAction(notification.id, 'accept')}
+                              className="text-xs bg-blue-600 text-white px-3 py-1 rounded-full"
+                            >
+                              Accept
+                            </button>
+                            <button
+                              onClick={() => handleNotificationAction(notification.id, 'decline')}
+                              className="text-xs bg-gray-200 text-gray-600 px-3 py-1 rounded-full"
+                            >
+                              Decline
+                            </button>
+                          </div>
+                        )}
                       </div>
                     ))
                   ) : (
