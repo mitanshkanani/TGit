@@ -2,6 +2,31 @@ import React, { useState } from "react";
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isNotificationOpen, setIsNotificationOpen] = useState(false);
+  // Example notifications - replace with actual data from your backend
+  const [notifications, setNotifications] = useState([
+    { id: 1, type: 'application', message: 'John Doe applied to your project "Project X"', isNew: true, seen: false },
+    { id: 2, type: 'accepted', message: 'You were accepted to project "Project Y"', isNew: true, seen: false }
+  ]);
+
+  const markAsSeen = () => {
+    setNotifications(notifications.map(notif => ({
+      ...notif,
+      isNew: false,
+      seen: true
+    })));
+  };
+
+  const clearNotifications = () => {
+    setNotifications([]);
+  };
+
+  const handleNotificationClick = () => {
+    setIsNotificationOpen(!isNotificationOpen);
+    if (!isNotificationOpen) {
+      markAsSeen();
+    }
+  };
 
   return (
     <nav className="bg-white border-b border-black/10">
@@ -47,6 +72,62 @@ const Navbar = () => {
             >
               Projects
             </a>
+            
+            {/* Add Notification Button */}
+            <div className="relative">
+              <button
+                onClick={handleNotificationClick}
+                className="relative p-2 text-black hover:text-gray-600"
+              >
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+                  />
+                </svg>
+                {notifications.some(n => !n.seen) && (
+                  <span className="absolute top-1 right-1 block h-2 w-2 rounded-full bg-red-500"></span>
+                )}
+              </button>
+              
+              {isNotificationOpen && (
+                <div className="absolute right-0 mt-2 w-80 bg-white rounded-lg shadow-lg border border-black/10 py-1 z-50">
+                  <div className="px-4 py-2 border-b border-black/10 flex justify-between items-center">
+                    <h3 className="text-sm font-semibold">Notifications</h3>
+                    {notifications.length > 0 && (
+                      <button
+                        onClick={clearNotifications}
+                        className="text-xs text-gray-500 hover:text-black"
+                      >
+                        Clear all
+                      </button>
+                    )}
+                  </div>
+                  {notifications.length > 0 ? (
+                    notifications.map(notification => (
+                      <div
+                        key={notification.id}
+                        className={`px-4 py-3 hover:bg-gray-50 ${notification.isNew ? 'bg-blue-50' : ''}`}
+                      >
+                        <p className="text-sm text-black">{notification.message}</p>
+                      </div>
+                    ))
+                  ) : (
+                    <div className="px-4 py-3">
+                      <p className="text-sm text-gray-500">No notifications</p>
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
+
             <div className="relative">
               <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
