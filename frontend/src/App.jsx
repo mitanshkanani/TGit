@@ -2,7 +2,7 @@ import React from "react";
 import Landing from "./pages/landing/Landing";
 import Main from "./pages/main/Main";
 import Login from "./pages/signup-in/login/Login";
-import Signup from "./pages/signup-in/signup/Signup";
+import Signup from "./pages/signup-in/signup/Register";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 const App = () => {
   return (
