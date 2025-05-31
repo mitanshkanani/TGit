@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import LandingNavbar from "./components/LandingNavbar";
 import { Button } from "@/components/ui/button";
-
+import Carousel from "./pages/Carousel";
 const Landing = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
@@ -85,6 +85,7 @@ const Landing = () => {
                 </div>
               </motion.div>
             </motion.div>
+            </Carousel>
           </div>
         </div>
       </main>
