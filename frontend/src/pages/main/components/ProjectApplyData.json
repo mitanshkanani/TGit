@@ -5,27 +5,96 @@
             "name": "AI Chat Assistant",
             "author": "Sarah Chen",
             "description": "An intelligent chatbot using OpenAI's GPT-3",
-            "tech": "Python, TensorFlow",
+            "tech": [
+                "Python",
+                "TensorFlow",
+                "OpenAI"
+            ],
             "stars": 128,
-            "category": "AI/ML"
+            "category": "AI/ML",
+            "createdAt": "2024-01-15",
+            "difficulty": "Intermediate",
+            "teamSize": "2-4",
+            "status": "Active"
         },
         {
             "id": 2,
             "name": "E-commerce Platform",
             "author": "Mike Johnson",
             "description": "Full-stack e-commerce solution with real-time analytics",
-            "tech": "Next.js, MongoDB",
+            "tech": [
+                "Next.js",
+                "MongoDB",
+                "Redis"
+            ],
             "stars": 89,
-            "category": "Web Development"
+            "category": "Web Development",
+            "createdAt": "2024-01-10",
+            "difficulty": "Advanced",
+            "teamSize": "4-6",
+            "status": "Active"
         },
         {
             "id": 3,
             "name": "Crypto Tracker",
             "author": "Alex Turner",
             "description": "Real-time cryptocurrency price tracking and analysis",
-            "tech": "React, Node.js",
+            "tech": [
+                "React",
+                "Node.js",
+                "WebSocket"
+            ],
             "stars": 67,
-            "category": "Finance"
+            "category": "Finance",
+            "createdAt": "2024-01-05",
+            "difficulty": "Intermediate",
+            "teamSize": "2-3",
+            "status": "Active"
+        },
+        {
+            "id": 4,
+            "name": "Mobile Food Delivery",
+            "author": "Lisa Wang",
+            "description": "Cross-platform food delivery application",
+            "tech": [
+                "React Native",
+                "Firebase",
+                "Google Maps"
+            ],
+            "stars": 92,
+            "category": "Mobile Apps",
+            "createdAt": "2024-01-18",
+            "difficulty": "Intermediate",
+            "teamSize": "3-5",
+            "status": "Active"
         }
-    ]
+    ],
+    "categories": [
+        "Web Development",
+        "Mobile Apps",
+        "AI/ML",
+        "Finance",
+        "Blockchain",
+        "DevOps",
+        "Game Development"
+    ],
+    "filters": {
+        "difficulty": [
+            "Beginner",
+            "Intermediate",
+            "Advanced"
+        ],
+        "teamSize": [
+            "1-2",
+            "2-3",
+            "3-5",
+            "4-6",
+            "6+"
+        ],
+        "status": [
+            "Active",
+            "Completed",
+            "On Hold"
+        ]
+    }
 }

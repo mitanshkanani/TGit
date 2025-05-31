@@ -29,11 +29,20 @@ const ProjectApplyCard = ({ project }) => {
       </div>
       <p className="mt-3 text-gray-600 flex-grow">{project.description}</p>
       <div className="mt-4 space-y-4">
-        <div className="flex items-center justify-between">
-          <span className="inline-block border border-black rounded-full px-3 py-1 text-sm text-black">
-            {project.tech}
-          </span>
-          <span className="text-sm text-gray-500">{project.category}</span>
+        <div className="flex flex-wrap gap-2">
+          {project.tech.map((tech, index) => (
+            <span
+              key={index}
+              className="inline-block border border-black rounded-full px-3 py-1 text-xs text-black"
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+        <div className="flex items-center justify-between text-sm">
+          <span className="text-gray-500">{project.difficulty}</span>
+          <span className="text-gray-500">Team: {project.teamSize}</span>
+          <span className="text-gray-500">{project.category}</span>
         </div>
         <button
           onClick={handleApply}
