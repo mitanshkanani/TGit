@@ -7,7 +7,6 @@ const Landing = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
       <LandingNavbar />
-
       <main className="pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
@@ -85,10 +84,17 @@ const Landing = () => {
                 </div>
               </motion.div>
             </motion.div>
-            </Carousel>
           </div>
         </div>
       </main>
+      <section className="bg-white py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">
+            Features
+          </h2>
+          <Carousel />
+        </div>
+      </section>
     </div>
   );
 };
